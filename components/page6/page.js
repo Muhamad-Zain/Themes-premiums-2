@@ -20,7 +20,7 @@ export default function Page6({data, id}) {
     },[])
     return(
         <section>
-        {data?.story?.one === '' ? (
+        {/* {data?.story?.one === '' ? (
             <section>
                 <AnimatedSection>
                     <div className="p-2 my-10 ">
@@ -28,7 +28,7 @@ export default function Page6({data, id}) {
                     </div>
                 </AnimatedSection>
             </section>
-        ):(
+        ):( */}
             <AnimatedSection>
             <section className=" w-[90%] sm:flex bg-green-950 bg-opacity-20 m-auto justify-around items-center my-20  py-5 sm:py-10 px-5 rounded-2xl shadow-md shadow-green-900">
                 <div className=" sm:w-2/5 ">
@@ -38,10 +38,10 @@ export default function Page6({data, id}) {
                     <h3 className="text-5xl playfair text-center py-5 ">Love Story</h3>
                     <AnimateSee>
                     <p className="">
-                        {data?.story?.one ? data?.story.one : "Mereka bertemu secara tak sengaja dan mulai saling mengenal. Dari obrolan ringan tumbuh rasa nyaman yang makin kuat seiring waktu."}
+                        {data?.story?.one || "Mereka bertemu tanpa sengaja di sebuah acara dan mulai berbincang. Awalnya hanya sapaan biasa, tetapi semakin lama, percakapan mereka terasa hangat. Dari hari ke hari, mereka semakin dekat dan menyadari ada perasaan yang tumbuh."}
                     </p>
                     <p className="py-5">
-                        {data?.story?.two ? data?.story?.two : "Meski ada perbedaan dan rintangan, mereka belajar untuk saling memahami dan mendukung satu sama lain."}
+                        {data?.story?.two || "Meski ada perbedaan dan rintangan, mereka belajar untuk saling memahami dan mendukung satu sama lain."}
                     </p>
                     <p className="sm:mb-20">
                     {data?.story?.tree ? data?.story?.tree : "Akhirnya, mereka memutuskan untuk menikah dan memulai hidup baru bersama, dengan harapan cinta mereka terus tumbuh selamanya."}
@@ -51,7 +51,7 @@ export default function Page6({data, id}) {
                 </div>
             </section>
             </AnimatedSection>
-        )}
+        {/* )} */}
         </section>
     )
 }
