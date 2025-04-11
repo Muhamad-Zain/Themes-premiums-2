@@ -9,5 +9,5 @@
 }
 .bgHero::after {
     content: '';
-    @apply bg-green-900 bg-opacity-30 absolute  z-10 w-full top-0 h-full
+    @apply bg-black bg-opacity-20 absolute  z-10 w-full top-0 h-full
 }
