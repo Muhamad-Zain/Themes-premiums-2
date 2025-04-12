@@ -37,7 +37,7 @@ export default function Page4({data, id}) {
                             <p className='pl-2'>Rumah Mempelai Wanita</p>
                         </div>
                     </div>
-                    <Link href={`${data?.location?.akad}`} className='py-2 w-32 flex justify-center items-center rounded-full bg-black bg-opacity-25 border border-white'>
+                    <Link href={`${data?.location?.akad}`} className='py-2 w-32 flex justify-center items-center rounded-full bg-green-800 bg-opacity-70 border border-white'>
                         <SiGooglemaps className='mr-2' />
                         location
                     </Link>
@@ -58,7 +58,7 @@ export default function Page4({data, id}) {
                             <p className='pl-2'>Rumah Mempelai Pria</p>
                         </div>
                     </div>
-                    <Link href={`${data?.location?.resepsi}`} className='py-2 w-32 flex justify-center items-center rounded-full bg-black bg-opacity-25 border border-white'>
+                    <Link href={`${data?.location?.resepsi}`} className='py-2 w-32 flex justify-center items-center rounded-full bg-green-800 bg-opacity-70 border border-white'>
                         <SiGooglemaps className='mr-2' />
                         location
                     </Link>

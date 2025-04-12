@@ -168,7 +168,7 @@ export default function Page8({id, data}) {
                         <button 
                             type='submit'
                             disabled={succes ? true : false}
-                            className='py-2 px-4 rounded-full bg-black bg-opacity-45 border mx-auto'
+                            className='py-2 px-4 rounded-full bg-green-800 bg-opacity-70 border mx-auto'
                             >
                                 {succes ? 'succes' : 'Konfirmasi'}
                         </button>
@@ -183,7 +183,7 @@ export default function Page8({id, data}) {
                     <div className='flex justify-center'>
                         <button 
                             onClick={handleGift}
-                            className='bg-black bg-opacity-45 border py-2 px-4 rounded-full'>Open Gift</button>
+                            className='bg-green-800 bg-opacity-70 border py-2 px-4 rounded-full'>Open Gift</button>
                         </div>
                     <div className={`${gift ? ' max-h-[200rem] opacity-100' : ' max-h-0 opacity-0 '} transition-all duration-500 ease-in-out  overflow-hidden w-full flex flex-wrap justify-around py-5`}>
                         {data?.gift?.one?.nameBank === data?.gift?.one?.nameBank ? (

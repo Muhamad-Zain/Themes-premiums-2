@@ -43,7 +43,7 @@ export default function Page1({btn, name, data, id}) {
                     <p className='text-sm'>kpd Bpk/Ibu/Saudara/i</p>
                     <h3 className='font-bold py-3 sm:py-5 playfair'>{name ? name : 'Nama Tamu'}</h3>
                     <div className='flex justify-center'>
-                        <button onClick={()=> {btnLocal(), btn()}} disabled={disable} className='flex justify-center items-center bg-black bg-opacity-50 p-2 px-4 border border-white rounded-full playfair'>
+                        <button onClick={()=> {btnLocal(), btn()}} disabled={disable} className='flex justify-center items-center bg-green-800 bg-opacity-70 p-2 px-4 border border-white rounded-full playfair'>
                             <LuPanelTopOpen className='mr-2' />
                             Buka Undangan
                         </button>

@@ -79,7 +79,7 @@ export default function Page7({ id}) {
                     <button 
                         type='submit' 
                         // disabled={message ==='' || name === '' ? true : false}
-                        className='bg-black bg-opacity-50 px-4 py-2 border rounded-lg text-white'
+                        className='bg-green-800 bg-opacity-70 px-4 py-2 border rounded-lg text-white'
                         >Kirim</button>
                     <div className='border-b-2 border-white w-full mt-2 ' />
                     <div className='h-56 overflow-y-scroll'>
