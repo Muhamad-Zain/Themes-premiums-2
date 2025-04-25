@@ -36,7 +36,7 @@ const fetchData = async (id) => {
     
     try {
         const dbRef = ref(database);
-        const data = await get(child(dbRef, `/weddings/${id}`))
+        const data = await get(child(dbRef, `/weddings-two/${id}`))
         if (data.exists()) {
             return data.val()
         } else {
@@ -103,7 +103,7 @@ const addDataToFirebase = async (id, formData) => {
     // const id =  Date.now().toString();
 
     try {
-      await set(ref(database, `/weddings/${id}`), formData);
+      await set(ref(database, `/weddings-two/${id}`), formData);
       console.log("Data successfully added!");
     } catch (error) {
       console.error("Error adding data:", error);
