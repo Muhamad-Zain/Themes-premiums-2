@@ -169,6 +169,8 @@ const addDataToFirebase = async (id, formData) => {
       const user = userCredential.user;
       console.log("User logged in:", user);
       // setVerify(true)
+      localStorage.setItem('loginTime', Date.now().toString());
+
       return true
   
     } catch (error) {

@@ -1,6 +1,6 @@
 'use client'
 import { addDataToFirebase, uploadFiles, auth, loginUser } from "@/components/data/firebase"
-// import { signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { useState } from "react"
 
 
@@ -8,9 +8,33 @@ import { useState } from "react"
 export default function AddData() {
     const [newId, setNewId] = useState('')  
     const [message, setMessage] = useState(false)
-    // const [auth, setAuth ] = useState(false) 
-    // const [name, setName] = useState('')
-    // const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [verify, setVerify] = useState(false)
+    const [err, setErr] = useState('')
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log('User dengan ID:', user.uid);
+        setVerify(true);
+    
+      } else {
+        console.log('User belum login');
+        setVerify(false);
+        localStorage.removeItem('loginTime');
+      }
+    });
+    
+    // const autoLogOut = async () => {
+    //   try {
+    //     await signOut(auth);
+    //     localStorage.removeItem('loginTime');
+    //     console.log('User auto logout berhasil!');
+    //   } catch (error) {
+    //     console.error('Error saat auto logout:', error);
+    //   }
+    // };
     
     
 
@@ -73,63 +97,8 @@ export default function AddData() {
         [name]: selectedFiles[0]
       }));
     }
-    // const { name, files: selectedFiles} = e.target
-    // if(name === "galery"){
-    //   const newFiles = Array.from(selectedFiles).map((file) => ({
-    //     file,
-    //     status: "pending",
-    //   }))
-    //   setFiles((prevFiles) => ({
-    //     ...prevFiles,
-    //     galery: [...(prevFiles.galery || []), ...newFiles],
-    //   }))
-    // } else {
-    //   setFiles((prevFiles) => ({
-    //     ...prevFiles,
-    //     [name]: [{file: selectedFiles[0], status: "pending"}]
-    //   }))
-    // }
   };
 
-//   const uploadFiles = async (id, files, categories) => {
-//     let allUploads = [];
-
-//     for (const category of categories){
-//       if(!files[category]) continue;
-//     const uploadPromises = files[category].map(async (fileObj) => {
-//       if (fileObj.status === "success") return fileObj;
-      
-//       try {
-//         const fileRef = storageRef.child(`uploads/${id}/${category}/${fileObj.file.name}`)
-//         await fileRef.put(fileObj.file)
-//         const url = await fileRef.getDownloadURL()
-
-//         return {...fileObj, status: "succes", url}
-//       } catch (error) {
-//         console.log(`Upload gagal ${fileObj.file.name} dikategory ${category}:`, error);
-        
-//         return { ...fileObj,status: "failed"}
-        
-//       }
-//     })
-//     const uploadedCategoryFiles = await Promise.all(uploadPromises)
-//     allUploads = [...allUploads, ...uploadedCategoryFiles]
-    
-//     setFiles((prevFiles) => ({
-//       ...prevFiles,
-//       [category]: uploadedCategoryFiles
-//     }))
-//   }
-//   setTimeout(() => {
-//     const failedFiles = allUploads.filter((file) => file.status === "failed")
-//     if(failedFiles.lenght >0){
-//       console.log("mengulangi upload file yang gagal");
-//       uploadFiles(id, files, categories)
-      
-//     }
-//   }, 2000);
-//   return allUploads
-// }
 
   const [idUndangan, setIdUndangan] = useState('')
   const handleSubmit = async(e) => {
@@ -170,22 +139,6 @@ export default function AddData() {
 
  
 
-  // console.log(name, password);
-  
-  // const handleAuth = () => {
-  //   // e.preventDefault
-  //   if (name === 'owner' && password === '123') {
-  //     setAuth(true)
-  //   } else {
-  //     alert('Autenticarion gagal')
-  //   }
-
-  // }
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [verify, setVerify] = useState(false)
-  // console.log(email, password);
-  const [err, setErr] = useState('')
   
 const login = async (email, password) => {
       const fetch = await loginUser(email, password)
@@ -204,10 +157,10 @@ const login = async (email, password) => {
 
 
     return(
-        <section className="max-w-[400px] mb-20 m-auto">
+        <section className="max-w-[400px] bg-green-700 mb-20 m-auto">
             {verify ? (
               <div>
-              <h3 className="text-center text-xl w-3/4 m-auto py-5 playfair">Add Data to template wedings exlusive</h3>
+              <h3 className="text-center text-xl w-3/4 m-auto text-white py-5 playfair">Add Data to template wedings exlusive</h3>
               <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" onChange={(e) => setIdUndangan(e.target.value)} />
 
               <form 

@@ -26,25 +26,25 @@ export default function Page5({data}) {
           // Render a countdown
           return (
               <><div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%] py-5 sm:w-3/4 lg:w-1/3 m-auto font-serif text-white p-2 justify-between">
-              <div className="rounded-lg bg-orange-950 bg-opacity-80 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+              <div className="rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
                 <div className="leading-6 text-xl font-bold">
                   {days}
                   <p className="text-sm">Days</p>
                 </div>
               </div>
-              <div className=" rounded-lg bg-orange-950 bg-opacity-80 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
                 <div className="leading-6 text-xl font-bold">
                   {hours}
                   <p className="text-sm">Hours</p>
                 </div>
               </div>
-              <div className=" rounded-lg bg-orange-950 bg-opacity-80 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
                 <div className="leading-6 text-xl font-bold">
                   {minutes}
                   <p className="text-sm">Minutes</p>
                 </div>
               </div>
-              <div className=" rounded-lg bg-orange-950 bg-opacity-80 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
                 <div className="leading-6 text-xl font-bold">
                   {seconds}
                   <p className="text-sm">Seconds</p>
@@ -52,7 +52,7 @@ export default function Page5({data}) {
               </div>
             </div><button
               onClick={handleSaveDate}
-              className="py-2 px-4 text-3xl rounded-2xl bg-orange-950 bg-opacity-80 text-white">SAVE DATE</button></>
+              className="py-2 px-4 text-3xl rounded-2xl bg-[#7c502f] text-white">SAVE DATE</button></>
           );
         }
       };
