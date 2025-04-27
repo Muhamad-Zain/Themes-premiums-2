@@ -1,5 +1,5 @@
 .rsvp{
-    @apply relative w-[90%] m-auto p-5 rounded-2xl shadow-md shadow-green-900;
+    @apply relative w-[90%] m-auto p-5 rounded-xl shadow-md shadow-green-900;
     background-position: center;
     background-size: cover;
     object-fit: cover;

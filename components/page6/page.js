@@ -30,9 +30,9 @@ export default function Page6({data, id}) {
             </section>
         ):( */}
             <AnimatedSection>
-            <section className=" w-[90%] sm:flex bg-green-950 bg-opacity-20 m-auto justify-around items-center my-20  py-5 sm:py-10 px-5 rounded-2xl shadow-md shadow-green-900">
+            <section className=" w-[90%] sm:flex bg-green-950 bg-opacity-20 m-auto justify-around items-center my-20  py-5 sm:py-10 px-5 rounded-xl shadow-md shadow-green-900">
                 <div className=" sm:w-2/5 ">
-                    <img src={image ? image: null} alt="love story"  className="rounded-2xl" />
+                    <img src={image ? image: null} alt="love story"  className="rounded-xl" />
                 </div>
                 <div className="sm:w-1/2">
                     <h3 className="text-5xl playfair text-center py-5 ">Love Story</h3>

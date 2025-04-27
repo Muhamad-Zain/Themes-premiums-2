@@ -1,5 +1,5 @@
 .bgAcara{
-    @apply relative w-[90%] m-auto rounded-2xl p-10 my-20 shadow-md shadow-green-900 ;
+    @apply relative w-[90%] m-auto rounded-xl p-10 my-20 shadow-md shadow-green-900 ;
     background-position: center;
     object-fit: cover;
     background-size: cover;

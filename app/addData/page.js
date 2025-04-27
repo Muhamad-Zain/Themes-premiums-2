@@ -160,7 +160,7 @@ const login = async (email, password) => {
         <section className="max-w-[400px] bg-green-700 mb-20 m-auto">
             {verify ? (
               <div>
-              <h3 className="text-center text-xl w-3/4 m-auto text-white py-5 playfair">Add Data to template wedings exlusive</h3>
+              <h3 className="text-center text-xl w-3/4 m-auto text-white py-5 playfair">Add Data to template wedings premiums-III</h3>
               <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" onChange={(e) => setIdUndangan(e.target.value)} />
 
               <form 

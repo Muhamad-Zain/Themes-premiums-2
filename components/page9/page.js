@@ -46,7 +46,7 @@ export default function Page9({data, id}) {
                         key={index} 
                         onClick={() => handleImg(index)}
                         src={url}  
-                        className='w-full h-[15rem] sm:h-[20rem] rounded-xl hover:opacity-50 ' 
+                        className='w-full h-[15rem] sm:h-[20rem] rounded-md hover:opacity-50 ' 
                         style={{backgroundSize: 'cover', objectFit: 'cover', backgroundPosition: 'center'}} />
                 )):
                 null}
