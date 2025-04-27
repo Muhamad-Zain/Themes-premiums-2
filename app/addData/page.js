@@ -1,5 +1,5 @@
 'use client'
-import { addDataToFirebase, uploadFiles, auth, loginUser } from "@/components/data/firebase"
+import { addDataToFirebase, uploadFiles, loginUser } from "@/components/data/firebase"
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { useState } from "react"
 
@@ -10,6 +10,7 @@ export default function AddData() {
     const [message, setMessage] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [idUndangan, setIdUndangan] = useState('II-')
     const [verify, setVerify] = useState(false)
     const [err, setErr] = useState('')
     const auth = getAuth();
@@ -100,7 +101,6 @@ export default function AddData() {
   };
 
 
-  const [idUndangan, setIdUndangan] = useState('')
   const handleSubmit = async(e) => {
     e.preventDefault();
     const id =  idUndangan;
@@ -161,7 +161,7 @@ const login = async (email, password) => {
             {verify ? (
               <div>
               <h3 className="text-center text-xl w-3/4 m-auto text-white py-5 playfair">Add Data to template wedings premiums-III</h3>
-              <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" onChange={(e) => setIdUndangan(e.target.value)} />
+              <input type="text" placeholder="Id  II-" value={idUndangan} className="text-black outline-none p-2 ml-2 rounded-md" onChange={(e) => setIdUndangan(e.target.value)} />
 
               <form 
                   onSubmit={handleSubmit}
