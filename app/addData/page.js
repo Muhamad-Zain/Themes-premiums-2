@@ -10,7 +10,7 @@ export default function AddData() {
     const [message, setMessage] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [idUndangan, setIdUndangan] = useState('II-')
+    const [idUndangan, setIdUndangan] = useState('P2-')
     const [verify, setVerify] = useState(false)
     const [err, setErr] = useState('')
     const auth = getAuth();
@@ -27,18 +27,6 @@ export default function AddData() {
       }
     });
     
-    // const autoLogOut = async () => {
-    //   try {
-    //     await signOut(auth);
-    //     localStorage.removeItem('loginTime');
-    //     console.log('User auto logout berhasil!');
-    //   } catch (error) {
-    //     console.error('Error saat auto logout:', error);
-    //   }
-    // };
-    
-    
-
     const [data, setData] = useState({
         // id: Date now(),
         name:{mens:'',grils:'', namaLengkap:{mens:'',grils:''}},
@@ -108,10 +96,7 @@ export default function AddData() {
     try {
       setMessage(true)
       await addDataToFirebase(id,data);
-      // console.log("Submitted data:", data);
-      // Panggil fungsi uploadFiles dengan state files dan kategori
-
-      const uploadedFiles = await uploadFiles(id, files, [
+      const uploadedFiles = await uploadFiles(`weddings-two/${idUndangan}`, files, [
       'hero',
       'home',
       'groom',
@@ -132,7 +117,7 @@ export default function AddData() {
       setMessage(false)
     }
 
-    setNewId(`premium-1.vercel.app/${id}`)
+    setNewId(`premium-2.vercel.app/${id}`)
     alert('Berhasil kirim data ke firebase')
     
   };
