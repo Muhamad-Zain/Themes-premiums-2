@@ -27,7 +27,39 @@ export default function App({id, name}) {
     const [open, setOpen] = useState(false)
 
     
+    useEffect(() => {
 
+        const scrollToTop = () => {
+            window.scrollTo({top: 0, left: 0, behavior: 'auto' })
+        }
+        window.addEventListener('load', scrollToTop)
+        window.addEventListener('beforeunload', scrollToTop)
+
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+        document.body.style.overflow = 'hidden'
+            if(isHidden){
+                document.body.style.overflow = 'hidden'
+            } else {
+                document.body.style.overflow = 'auto'
+            }
+            
+        return() => {
+            document.body.style.overflow = '';
+            window.addEventListener('load', scrollToTop)
+            window.addEventListener('beforeunload', scrollToTop)
+        }
+    },[isHidden])
+
+    useEffect(() => {
+        const getData = async () => {
+            const data = await fetchData(id)
+            setData(data)
+        }
+        getData()
+
+    },[])
 
     const toggleMusic = () => {
         const audio = document.getElementById('music');
@@ -61,34 +93,7 @@ export default function App({id, name}) {
           }, 100); 
     }
     const navbar = () => setOpen(!open)
-    useEffect(() => {
-        window.scrollTo(0,0)
-
-        const handleResize = () => {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`)
-        }
-        handleResize()
-            if(isHidden){
-                document.body.style.overflow = 'hidden'
-            } else {
-                document.body.style.overflow = 'auto'
-            }
-            
-        return() => {
-            document.body.style.overflow = '';
-        }
-    },[isHidden])
-
-    useEffect(() => {
-        const getData = async () => {
-            const data = await fetchData(id)
-            setData(data)
-        }
-        getData()
-
-    },[])
-    console.log(data);
+    
     
     return( data ?
         (<section className="sm:px-20 relative">

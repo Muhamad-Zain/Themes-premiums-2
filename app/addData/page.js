@@ -28,7 +28,6 @@ export default function AddData() {
     });
     
     const [data, setData] = useState({
-        // id: Date now(),
         name:{mens:'',grils:'', namaLengkap:{mens:'',grils:''}},
         date: {akad:'',resepsi:'', all:'',time:{akad:'',resepsi:''}},
         parent:{mens:'',grils:''},
