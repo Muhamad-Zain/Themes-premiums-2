@@ -11,8 +11,6 @@ export default function Page7({ id}) {
     const [name, setName] = useState('')
     const [ucapan, setUcapan] = useState([])
     const [image, setImage] = useState('')
-   
-    
 
     useEffect(() => {
         const getImage = async () => {
@@ -20,7 +18,6 @@ export default function Page7({ id}) {
             const url = await fetchBg(`${id}/expresion`)
             setImage(url)
         }
-
         
         getImage()
         const messageRef = ref(database, `weddings-two/${id}/expresion/`)
@@ -51,7 +48,6 @@ export default function Page7({ id}) {
             setName('')
             setMessage('')
         }
-
     }
     return(
         <section className='py-10'>
@@ -78,7 +74,6 @@ export default function Page7({ id}) {
                         <p className='text-slate-300 text-center py-2'>{alert}</p>
                     <button 
                         type='submit' 
-                        // disabled={message ==='' || name === '' ? true : false}
                         className='bg-green-800 bg-opacity-70 px-4 py-2 border rounded-lg text-white'
                         >Kirim</button>
                     <div className='border-b-2 border-white w-full mt-2 ' />
@@ -92,7 +87,6 @@ export default function Page7({ id}) {
                     ) : (
                         <p className='text-white'>Tidak ada ucapan.</p>
                     )}
-
                     </div>
                 </form>
                 </AnimateSee>

@@ -7,8 +7,6 @@ import PropTypes from 'prop-types'
 import { MdFileCopy } from "react-icons/md";
 import { AnimatedSection, AnimateSee } from '../animation'
 
-
-
 export default function Page8({id, data}) {
     const [image, setImage] = useState('')
 
@@ -29,11 +27,8 @@ export default function Page8({id, data}) {
     const hours = currentDate.getHours();       // Mendapatkan jam
     const minutes = currentDate.getMinutes();   // Mendapatkan menit
     const seconds = currentDate.getSeconds(); 
-
-
     const formattedDate = `${day}-${month}-${year}`;
     const formattedTime = `${hours}:${minutes}:${seconds}`;
-    
 
     const handleGift = () => {
         setGift(!gift)
@@ -64,7 +59,6 @@ export default function Page8({id, data}) {
         }
     }
     
-
     const buttonCopy = async (text) => {
         try {
             await navigator.clipboard.writeText(text)
@@ -86,7 +80,7 @@ export default function Page8({id, data}) {
             }
 
         } catch (error) {
-            
+            console.log(error);
         }
     }
     useEffect(() => {
@@ -95,10 +89,7 @@ export default function Page8({id, data}) {
             const url = await fetchBg(`${id}/rsvp`)
             setImage(url)
         }
-
-        
         getImage()
-
     },[])
 
     return(
@@ -209,7 +200,6 @@ export default function Page8({id, data}) {
                                 <p>{data?.gift?.two?.rekening}</p>
                                 <p>{data?.gift?.two?.an}</p>
                             </div>
-                            {/* <div className='flex justify-center'> */}
                                 <button 
                                     onClick={() => buttonCopy(data?.gift?.two?.rekening)}
                                     disabled={load2? true : false}
@@ -217,7 +207,6 @@ export default function Page8({id, data}) {
                                     <MdFileCopy className='mr-2' />
                                     {load2 ? 'succes' : 'copy'}
                                 </button>
-                            {/* </div> */}
                             </div>
                         ): null}
                         {data?.gift?.home === data?.gift?.home ? (

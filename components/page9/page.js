@@ -7,10 +7,11 @@ import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { CgCloseO } from "react-icons/cg";
 import { AnimatedSection } from "../animation";
 
-
-
 export default function Page9({data, id}) {
     const [image, setImage] = useState([])
+    const [open, setOpen] = useState(false)
+    const [imgIndex, setImgIndex] = useState(0)
+    const closeBtn = () => setOpen(false)
 
     useEffect(() =>{
         const fetch = async () => {
@@ -20,15 +21,11 @@ export default function Page9({data, id}) {
         fetch()
     },[])
 
-    const [open, setOpen] = useState(false)
-    const [imgIndex, setImgIndex] = useState(0)
-
     const handleImg = (index) => {
         setOpen(true)
         setImgIndex(index)
     }
 
-    const closeBtn = () => setOpen(false)
     const prevImage = () => {
         setImgIndex((prev) => (prev - 1 + image.length ) % image.length)
     }

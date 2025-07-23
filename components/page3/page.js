@@ -5,7 +5,6 @@ import { fetchBg } from '../data/firebase'
 import { AnimatedSection, AnimateSee } from '../animation'
 
 export default function Page3({data, id}) {
-
     const [groom, setGroom] = useState('')
     const [bride, setBride] = useState('')
 

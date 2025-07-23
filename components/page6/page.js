@@ -6,8 +6,6 @@ import { AnimatedSection, AnimateSee } from "../animation"
 
 export default function Page6({data, id}) {
     const [image, setImage] = useState('')
-    // const [story, setStory]= useState(false)
-    
 
     useEffect(() => {
         const getImage = async () => {
@@ -20,15 +18,6 @@ export default function Page6({data, id}) {
     },[])
     return(
         <section>
-        {/* {data?.story?.one === '' ? (
-            <section>
-                <AnimatedSection>
-                    <div className="p-2 my-10 ">
-                        <img src={image ? image: null} className=" border-4 border-double rounded-2xl " />
-                    </div>
-                </AnimatedSection>
-            </section>
-        ):( */}
             <AnimatedSection>
             <section className=" w-[90%] sm:flex bg-green-950 bg-opacity-20 m-auto justify-around items-center my-20  py-5 sm:py-10 px-5 rounded-xl shadow-md shadow-green-900">
                 <div className=" sm:w-2/5 ">
@@ -51,7 +40,6 @@ export default function Page6({data, id}) {
                 </div>
             </section>
             </AnimatedSection>
-        {/* )} */}
         </section>
     )
 }

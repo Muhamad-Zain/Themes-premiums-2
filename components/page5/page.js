@@ -7,10 +7,7 @@ import { AnimatedSection } from "../animation";
 
 export default function Page5({data}) {
     const time = `${data?.date?.all}`
-    // const WeddingDay = data?.date?.dateAll
-    
     const wedingDate =  new Date(`${time}T10:00:00`)
-    
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -19,9 +16,35 @@ export default function Page5({data}) {
 
     const renderer = ({days, hours, minutes, seconds, completed }) => {
       if (completed) {
-            // return setSave(false)
           // Render a completed state
-          return (<span className="text-xl">Hari Penikahan Telah Tiba!!</span>);
+          return (
+            <div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%] py-5 sm:w-3/4 lg:w-1/3 m-auto font-serif text-white p-2 justify-between">
+              <div className="rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
+                <div className="leading-6 text-xl font-bold">
+                  00
+                  <p className="text-sm">Days</p>
+                </div>
+              </div>
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
+                <div className="leading-6 text-xl font-bold">
+                  00
+                  <p className="text-sm">Hours</p>
+                </div>
+              </div>
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
+                <div className="leading-6 text-xl font-bold">
+                  00
+                  <p className="text-sm">Minutes</p>
+                </div>
+              </div>
+              <div className=" rounded-lg bg-[#7c502f] w-[4rem] h-[3.5rem]  flex justify-center items-center">
+                <div className="leading-6 text-xl font-bold">
+                  00
+                  <p className="text-sm">Seconds</p>
+                </div>
+              </div>
+            </div>
+          );
         } else {
           // Render a countdown
           return (
@@ -50,9 +73,13 @@ export default function Page5({data}) {
                   <p className="text-sm">Seconds</p>
                 </div>
               </div>
-            </div><button
+            </div>
+            <button
               onClick={handleSaveDate}
-              className="py-2 px-4 text-3xl rounded-2xl bg-[#7c502f] text-white">SAVE DATE</button></>
+              className="py-2 px-4 text-3xl rounded-2xl bg-[#7c502f] text-white">
+                SAVE DATE
+            </button>
+          </>
           );
         }
       };
@@ -61,7 +88,7 @@ export default function Page5({data}) {
         const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
         const eventTitle = `Wedding of ${data?.name?.mens} & ${data?.name?.grils}`;
         const eventDetails = `Join us in celebrating the wedding of ${data?.name?.mens} & ${data?.name?.grils}.`;
-        const eventLocation = "Bojonegoro, Indonesia";
+        const eventLocation = "Indonesia";
       
         const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
         
@@ -76,9 +103,7 @@ export default function Page5({data}) {
                 {
                   isClient && 
                   <Countdown date={time} renderer={renderer} />
-                  
                 }
-                
             </div>
             </AnimatedSection>
         </section>
