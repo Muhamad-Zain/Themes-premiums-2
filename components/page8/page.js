@@ -45,7 +45,7 @@ export default function Page8({id, data}) {
                 setAlert('')
             }, 2000);
         } else {
-            const rsvp = ref(database, `weddings/${id}/rsvp/${Date.now()}`)
+            const rsvp = ref(database, `weddings-two/${id}/rsvp/${Date.now()}`)
             set(rsvp, {
                 name,
                 confirm:select,
@@ -177,7 +177,7 @@ export default function Page8({id, data}) {
                             className='bg-green-800 bg-opacity-70 border py-2 px-4 rounded-full'>Open Gift</button>
                         </div>
                     <div className={`${gift ? ' max-h-[200rem] opacity-100' : ' max-h-0 opacity-0 '} transition-all duration-500 ease-in-out  overflow-hidden w-full flex flex-wrap justify-around py-5`}>
-                        {data?.gift?.one?.nameBank === data?.gift?.one?.nameBank ? (
+                        {data?.gift?.one?.nameBank  ? (
                             <div className='sm:w-[45%] w-[90%] my-2 bg-white border-4 border-double border-slate-600 bg-opacity-95 px-5 py-2 rounded-2xl'>
                             <h1 className='text-blue-800 font-bold text-2xl italic'>{data?.gift?.one?.nameBank}</h1>
                             <div className='flex flex-wrap justify-between py-5 text-sm text-slate-900 italic'>
@@ -193,7 +193,7 @@ export default function Page8({id, data}) {
                             </button>
                             </div>
                         ): null}
-                        {data?.gift?.two?.nameBank === data?.gift?.two?.nameBank ? (
+                        {data?.gift?.two?.nameBank  ? (
                             <div className='sm:w-[45%] w-[90%] my-2 bg-white border-4 border-double border-slate-600 bg-opacity-95 px-5 py-2 rounded-2xl'>
                             <h1 className='text-blue-800 font-bold text-2xl italic'>{data?.gift?.two?.nameBank}</h1>
                             <div className='flex flex-wrap justify-between py-5 text-sm text-slate-900 italic'>

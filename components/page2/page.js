@@ -24,25 +24,25 @@ export default function Page2({data, id}) {
             // Render a completed state
             return (
               <div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%]  sm:w-3/4 lg:w-1/3 m-auto font-serif text-white p-2 justify-between ">
-                <div className="rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className="rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     00
                     <p className="text-sm font-normal">Days</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     00
                     <p className="text-sm font-normal">Hours</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     00
                     <p className="text-sm font-normal">Minutes</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     00
                     <p className="text-sm font-normal">Seconds</p>
@@ -54,25 +54,25 @@ export default function Page2({data, id}) {
             // Render a countdown
             return (
                 <><div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%]  sm:w-3/4 lg:w-1/3 m-auto font-serif text-white p-2 justify-between ">
-                <div className="rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className="rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     {days}
                     <p className="text-sm font-normal">Days</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     {hours}
                     <p className="text-sm font-normal">Hours</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     {minutes}
                     <p className="text-sm font-normal">Minutes</p>
                   </div>
                 </div>
-                <div className=" rounded-full bg-green-800 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
+                <div className=" rounded-full bg-green-950 bg-opacity-80 border border-white w-[4.5rem] h-[4.5rem]  flex justify-center items-center">
                   <div className="leading-6 text-2xl font-bold">
                     {seconds}
                     <p className="text-sm font-normal">Seconds</p>

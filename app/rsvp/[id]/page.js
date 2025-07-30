@@ -29,19 +29,19 @@ export default function Rsvp() {
         getData();
     }, [id]);
     return(
-        <section className=" max-w-[400px] bg-slate-700 min-h-screen m-auto">
+        <section className=" max-w-[400px]  min-h-screen m-auto">
             <div className="p-5">
                 <h2 className="playfair text-5xl font-bold underline text-center italic animate-pulse py-5">RSVP</h2>
                 <div>
                     <h3 className="py-5">Konfirmasi Kehadiran </h3>
-                    <div className="overflow-x-auto rounded-lg border border-slate-200">
+                    <div className="overflow-x-auto rounded-lg border border-orange-700">
                     <table className=" min-w-full  text-sm leading-normal">
                         <thead className="uppercase">
                             <tr>
-                            <th className="py-3 px-1 border-b text-center">No</th>
-                            <th className="py-3 px-1 text-left border-b">Nama</th>
-                            <th className="py-3 px-1 text-left border-b">Kehadiran</th>
-                            <th className="py-3 px-1 text-left border-b">Jumlah</th>
+                            <th className="py-3 px-1 border-b border-orange-700 text-center">No</th>
+                            <th className="py-3 px-1 text-left border-b border-orange-700">Nama</th>
+                            <th className="py-3 px-1 text-left border-b border-orange-700">Kehadiran</th>
+                            <th className="py-3 px-1 text-left border-b border-orange-700">Jumlah</th>
                             </tr>
                         </thead>
                         <tbody>

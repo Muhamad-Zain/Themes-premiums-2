@@ -84,7 +84,7 @@ const fetchGalery = async (id) => {
 // Send Data String to Firebase
 const addDataToFirebase = async (id, formData) => {
     try {
-      await set(ref(database, `${id}`), formData);
+      await set(ref(database, `weddings-two/${id}`), formData);
       console.log("Data successfully added!");
     } catch (error) {
       console.error("Error adding data:", error);
