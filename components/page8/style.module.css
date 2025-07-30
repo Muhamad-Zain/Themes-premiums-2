@@ -14,6 +14,6 @@
     /* background-color: rgba(0, 0, 0, 0.8); */
     top: 0;
     left: 0;
-    @apply bg-green-900 bg-opacity-30 backdrop-blur-sm
+    @apply bg-black bg-opacity-30 backdrop-blur-sm
 
 }
